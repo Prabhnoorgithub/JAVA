@@ -8,7 +8,7 @@ class Main {
     if (num1 > num2) {
     System.out.println("The first number is greater");
     } else {
-    System.out.println("The second number is         greater");
+    System.out.println("The second number is greater");
     }
   input.close();
   }
