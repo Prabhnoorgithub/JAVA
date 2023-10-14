@@ -7,8 +7,12 @@ class Main {
     double num2 = input.nextDouble();
     if (num1 > num2) {
     System.out.println("The first number is greater");
-    } else {
-    System.out.println("The second number is greater");
+    }
+    else if (num1==num2) {
+    System.out.println("The numbers are equal");
+    } 
+    else {
+      System.out.println("The secound number is greater");
     }
   input.close();
   }
