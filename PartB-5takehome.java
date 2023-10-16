@@ -1,43 +1,41 @@
 import java.util.Scanner;
 
-class Main {
+class Main{
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Let's play Rock, Paper, Scissors!");
         System.out.println("Enter your choice:");
-        System.out.println("1. Rock");
-        System.out.println("2. Paper");
-        System.out.println("3. Scissors");
+        System.out.println("1 - Rock");
+        System.out.println("2 - Paper");
+        System.out.println("3 - Scissors");
 
-        System.out.print("Player 1, enter your choice (1/2/3 or rock/paper/scissors): ");
-        String player1Choice = scanner.nextLine().toLowerCase();
+      
+        System.out.print("Player 1: ");
+        int player1Choice = scanner.nextInt();
+        System.out.print("Player 2: ");
+        int player2Choice = scanner.nextInt();
 
-        System.out.print("Player 2, enter your choice (1/2/3 or rock/paper/scissors): ");
-        String player2Choice = scanner.nextLine().toLowerCase();
-
-        // Determine the winner
-        String result = determineWinner(player1Choice, player2Choice);
-
-        System.out.println("Player 1 chose: " + player1Choice);
-        System.out.println("Player 2 chose: " + player2Choice);
-
-        if (result.equals("tie")) {
+       
+        if (player1Choice == player2Choice) {
             System.out.println("It's a tie!");
+        } else if ((player1Choice == 1 && player2Choice == 3) || (player1Choice == 2 && player2Choice == 1) || (player1Choice == 3 && player2Choice == 2)) {
+            System.out.println("Player 1 wins! Rock beats Scissors.");
         } else {
-            System.out.println("The winner is: " + result);
+            System.out.println("Player 2 wins! " + getChoiceName(player2Choice) + " beats " + getChoiceName(player1Choice) + ".");
         }
     }
 
-    private static String determineWinner(String choice1, String choice2) {
-        if (choice1.equals(choice2)) {
-            return "tie";
-        } else if ((choice1.equals("rock") && choice2.equals("scissors")) ||
-                   (choice1.equals("paper") && choice2.equals("rock")) ||
-                   (choice1.equals("scissors") && choice2.equals("paper"))) {
-            return "Player 1";
-        } else {
-            return "Player 2";
+    public static String getChoiceName(int choice) {
+        switch (choice) {
+            case 1:
+                return "Rock";
+            case 2:
+                return "Paper";
+            case 3:
+                return "Scissors";
+            default:
+                return "Invalid Choice";
         }
     }
 }
