@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import java.util.Scanner;
+
 class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -31,9 +33,7 @@ class Main {
             return "Bonjour ! Bienvenue dans notre programme.";
         } else if (lowerCaseChoice == 'g') {
             return "Hallo! Willkommen in unserem Programm.";
-        } else if (lowerCaseChoice == 's') {
-            return "¡Hola! Bienvenido a nuestro programa.";
-        } else {
+        }  else {
             return null; 
         }
     }
